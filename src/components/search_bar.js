@@ -1,7 +1,13 @@
-import React from 'react';
+//import react and pull off component as variable called Component
+import React, { Component } from 'react';
 
-const SearchBar = () => {
-  return <input />;
+//class based component = one that needs to know about itself and be able to communicate with other components (needs to see what user typed in to input)
+//must have render method
+class SearchBar extends Component {
+  render() {
+    return <input />
+  }
+
 }
 
 export default SearchBar;
