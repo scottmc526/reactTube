@@ -4,13 +4,18 @@ import React, { Component } from 'react';
 //class based component = one that needs to know about itself and be able to communicate with other components (needs to see what user typed in to input)
 //must have render method
 class SearchBar extends Component {
-  render() {
-    return <input onChange={this.onInputChange} />
-  }
 
-  onInputChange(event) {
-    console.log(event.target.value);
+  constructor (props) {
+    //super is a method of Component class
+    super(props);
+
+    this.state = { term: '' };
+  }
+  render() {
+    return <input onChange={event => this.setState({ term: event.target.value })} />
   }
 }
 
 export default SearchBar;
+
+//state = plain js object that is used to record and react to user events. Each class based component has its own state object. Whenever component state is changed it rerenders and forces all children to rerender.
