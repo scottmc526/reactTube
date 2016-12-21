@@ -2,12 +2,13 @@
 import React, { Component } from 'react';
 //used to interact with DOM
 import ReactDOM from 'react-dom';
-import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
+import SearchBar from './components/search_bar';
+import VideoList from './components/video_list'
 const API_KEY = 'AIzaSyA3rJ41uVetgnXr50rOb8G26i1TM8or46E';
 
 
-class App extends {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -18,10 +19,12 @@ class App extends {
       this.setState({ videos });
     })
   }
+
   render () {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos}/>
       </div>
     );
   }
@@ -30,3 +33,6 @@ class App extends {
 ReactDOM.render(<App />, document.querySelector('.container'));
 
 //downwards data flow = the most parent component should be responsible for fetching data that other components need to have access to.
+
+//passing props means to pass data in react
+//passing prop videos to videoList 
