@@ -3,7 +3,7 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
-.searchBarStyle {
+.search-bar {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 15px;
@@ -16,14 +16,19 @@ body {
   font-size: 25px;
 }
 
-.listStyle {
+.video-list-item {
   border: 1px solid black;
   background: #fef9ea;
   font-family: inherit;
   font-size: 25px;
+  cursor: pointer;
 }
 
-.detailStyle {
+.video-list-item:hover {
+  opacity: .5;
+}
+
+.video-detail {
   font-family: inherit;
   font-size: 25px;
   font-weight: bold;
