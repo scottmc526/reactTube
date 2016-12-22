@@ -1,0 +1,26 @@
+body {
+  background-color: #a3d0c6;
+}
+
+.searchBarStyle {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: #fef9ea;
+  width: 50%;
+
+}
+.listStyle {
+  border: 1px solid black;
+  background: #fef9ea;
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+}
+
+.detailStyle {
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  font-weight: bold;
+}
