@@ -13,11 +13,17 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { videos: [] };
+    this.state = {
+      videos: [],
+      selectedVideo: null
+    };
 
     //if you have key and value with same string you can refactor to just the key ie {videos: videos} becomes {videos}
     YTSearch({key: API_KEY, term: 'bowling'}, (videos) => {
-      this.setState({ videos });
+      this.setState({
+        videos : videos,
+        selectedVideo: videos[0]
+      });
     })
   }
 
@@ -25,8 +31,10 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]}/>
-        <VideoList videos={this.state.videos}/>
+        <VideoDetail video={this.state.selectedVideo}/>
+        <VideoList
+          onVideoSelect={(video) => this.setState({selectedVideo: video})}  
+          videos={this.state.videos}/>
       </div>
     );
   }
