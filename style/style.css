@@ -1,5 +1,6 @@
 body {
   background-color: #a3d0c6;
+  font-family: 'Amatic SC', cursive;
 }
 
 .searchBarStyle {
@@ -10,17 +11,20 @@ body {
   border-radius: 5px;
   background: #fef9ea;
   width: 50%;
-
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 25px;
 }
+
 .listStyle {
   border: 1px solid black;
   background: #fef9ea;
-  font-family: 'Amatic SC', cursive;
+  font-family: inherit;
   font-size: 25px;
 }
 
 .detailStyle {
-  font-family: 'Amatic SC', cursive;
+  font-family: inherit;
   font-size: 25px;
   font-weight: bold;
 }
