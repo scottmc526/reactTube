@@ -1,3 +1,4 @@
+import _ from 'lodash';
 //used to create and manage components
 import React, { Component } from 'react';
 //used to interact with DOM
@@ -18,8 +19,11 @@ class App extends Component {
       selectedVideo: null
     };
 
-    //if you have key and value with same string you can refactor to just the key ie {videos: videos} becomes {videos}
-    YTSearch({key: API_KEY, term: 'bowling'}, (videos) => {
+    this.videoSearch('bowling');
+  }
+
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
       this.setState({
         videos : videos,
         selectedVideo: videos[0]
@@ -28,13 +32,15 @@ class App extends Component {
   }
 
   render () {
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+
     return (
       <div>
-        <SearchBar />
-        <VideoDetail video={this.state.selectedVideo}/>
+        <SearchBar onSearchTermChange={videoSearch} />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList
-          onVideoSelect={(video) => this.setState({selectedVideo: video})}  
-          videos={this.state.videos}/>
+          onVideoSelect={(video) => this.setState({selectedVideo: video})}
+          videos={this.state.videos} />
       </div>
     );
   }

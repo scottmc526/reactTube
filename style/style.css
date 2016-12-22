@@ -1,8 +1,9 @@
 body {
   background-color: #a3d0c6;
+  font-family: 'Amatic SC', cursive;
 }
 
-.searchBarStyle {
+.search-bar {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 15px;
@@ -10,17 +11,25 @@ body {
   border-radius: 5px;
   background: #fef9ea;
   width: 50%;
-
-}
-.listStyle {
-  border: 1px solid black;
-  background: #fef9ea;
-  font-family: 'Amatic SC', cursive;
+  font-family: inherit;
+  font-weight: bold;
   font-size: 25px;
 }
 
-.detailStyle {
-  font-family: 'Amatic SC', cursive;
+.video-list-item {
+  border: 1px solid black;
+  background: #fef9ea;
+  font-family: inherit;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.video-list-item:hover {
+  opacity: .5;
+}
+
+.video-detail {
+  font-family: inherit;
   font-size: 25px;
   font-weight: bold;
 }
