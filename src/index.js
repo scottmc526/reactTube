@@ -32,7 +32,9 @@ class App extends Component {
 
 ReactDOM.render(<App />, document.querySelector('.container'));
 
+//only use curly braces when referencing javaScript variable inside jsx
+
 //downwards data flow = the most parent component should be responsible for fetching data that other components need to have access to.
 
 //passing props means to pass data in react
-//passing prop videos to videoList 
+//passing prop videos to videoList
