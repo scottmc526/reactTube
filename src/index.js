@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
-import VideoList from './components/video_list'
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 const API_KEY = 'AIzaSyA3rJ41uVetgnXr50rOb8G26i1TM8or46E';
 
 
@@ -15,7 +16,7 @@ class App extends Component {
     this.state = { videos: [] };
 
     //if you have key and value with same string you can refactor to just the key ie {videos: videos} becomes {videos}
-    YTSearch({key: API_KEY, term: 'surfing'}, (videos) => {
+    YTSearch({key: API_KEY, term: 'bowling'}, (videos) => {
       this.setState({ videos });
     })
   }
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoDetail video={this.state.videos[0]}/>
         <VideoList videos={this.state.videos}/>
       </div>
     );
